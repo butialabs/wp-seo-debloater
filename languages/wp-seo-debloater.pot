@@ -1,0 +1,93 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WP SEO Debloater\n"
+"POT-Creation-Date: 2016-03-02 18:03+0800\n"
+"PO-Revision-Date: 2016-02-04 14:55+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-seo-debloater.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "WP SEO Debloater Settings"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "WP SEO Debloater"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Settings"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Without further ado: Hide the bloat"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Featured image nag"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid ""
+"Hide image warning nag that shows in edit Post/Page screen when featured "
+"image is smaller than 200x200 pixels."
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Admin columns"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "SEO menu admin bar"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Dashboard widget"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-wp-seo-debloater-settings.php
+msgid "Access denied"
+msgstr ""
+
+#: includes/class-wp-seo-debloater.php
+msgid "No Access"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP SEO Debloater"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://butialabs.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Hide most of the bloat that the Yoast SEO plugin adds to your WordPress "
+"Dashboard"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Butiá Labs"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://butialabs.com"
+msgstr ""

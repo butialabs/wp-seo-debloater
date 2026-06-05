@@ -1,0 +1,56 @@
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to WordPress.org
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate version consistency
+        run: |
+          echo "Checking version consistency..."
+          PLUGIN_VERSION=$(grep -oP '(?<=Version:\s{1,10})[0-9]+\.[0-9]+\.[0-9]+' wp-seo-debloater.php | head -1)
+          README_VERSION=$(grep -oP '(?<=Stable tag:\s)[0-9]+\.[0-9]+\.[0-9]+' readme.txt | head -1)
+          TAG_VERSION=${GITHUB_REF#refs/tags/}
+
+          echo "Plugin version: $PLUGIN_VERSION"
+          echo "Readme version: $README_VERSION"
+          echo "Tag version: $TAG_VERSION"
+
+          if [ "$PLUGIN_VERSION" != "$README_VERSION" ]; then
+            echo "❌ Error: Plugin version ($PLUGIN_VERSION) does not match readme.txt Stable tag ($README_VERSION)"
+            exit 1
+          fi
+
+          if [ "$PLUGIN_VERSION" != "$TAG_VERSION" ]; then
+            echo "❌ Error: Plugin version ($PLUGIN_VERSION) does not match git tag ($TAG_VERSION)"
+            exit 1
+          fi
+
+          echo "✅ All versions match: $PLUGIN_VERSION"
+
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          generate-zip: true
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: wp-seo-debloater
+
+      - name: Upload release asset
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-seo-debloater-${{ github.ref_name }}
+          path: ${{ steps.deploy.outputs.zip-path }}
+          retention-days: 30
